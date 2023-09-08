@@ -9,35 +9,35 @@
  */
 int is_digit(char *s)
 {
-	int j = 0;
+	int i = 0;
 
-	while (s[j])
+	while (s[i])
 	{
-		if (s[j] < '0' || s[j] > '9')
+		if (s[i] < '0' || s[i] > '9')
 			return (0);
-		j++;
+		i++;
 	}
 	return (1);
 }
 
 /**
- * _strlen - this returns the length of a string
- * @s: the string to evaluate
+ * _strlen - return the length of a string
+ * @s: string for evaluation
  * Return: the length of the string
  */
 int _strlen(char *s)
 {
-	int j = 0;
+	int i = 0;
 
-	while (s[j] != '\0')
+	while (s[i] != '\0')
 	{
-		j++;
+		i++;
 	}
-	return (j);
+	return (i);
 }
 
 /**
- * errors - this handles errors for main
+ * errors - handles errors for main
  */
 void errors(void)
 {
@@ -46,9 +46,10 @@ void errors(void)
 }
 
 /**
- * main - this multiplies two positive numbers
- * @argc: the number of arguments
- * @argv: the array of arguments
+ * main - multiplies two positive numbers
+ * @argc: number of arguments
+ * @argv: array of arguments
+ *
  * Return: always 0 (Success)
  */
 int main(int argc, char *argv[])
@@ -65,8 +66,8 @@ int main(int argc, char *argv[])
 	result = malloc(sizeof(int) * len);
 	if (!result)
 		return (1);
-	for (j = 0; j <= len1 + len2; j++)
-		result[j] = 0;
+	for (i = 0; i <= len1 + len2; i++)
+		result[i] = 0;
 	for (len1 = len1 - 1; len1 >= 0; len1--)
 	{
 		digit1 = s1[len1] - '0';
@@ -81,12 +82,12 @@ int main(int argc, char *argv[])
 		if (carry > 0)
 			result[len1 + len2 + 1] += carry;
 	}
-	for (j = 0; j < len - 1; j++)
+	for (i = 0; i < len - 1; i++)
 	{
-		if (result[j])
+		if (result[i])
 			a = 1;
 		if (a)
-			_putchar(result[j] + '0');
+			_putchar(result[i] + '0');
 	}
 	if (!a)
 		_putchar('0');

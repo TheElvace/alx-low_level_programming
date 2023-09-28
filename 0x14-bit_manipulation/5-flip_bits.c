@@ -2,11 +2,12 @@
 #include <stdio.h>
 
 /**
- * flip_bits: this flip bits to convert one number to another number
+ * flip_bits - flip bits to convert one number to another number
  * @n: the first number
  * @m: the second number to convert to
- * Return: the number of bits that was needed to flip
+ * Return: number of bits that was needed to flip
  */
+
 unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
 	unsigned long int diff;
